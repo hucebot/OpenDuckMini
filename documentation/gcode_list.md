@@ -37,3 +37,23 @@ To make printing easier, you can find below a list of the gcode files provided i
     - Right Antenna Holder x 1
     - Left Cache x 1
     - Right Cache x 1
+
+- **part7_7h00m.gcode**: Seventh part, estimated time 7 hours. Includes:
+    - Body Front x 1
+    - Body Back x 1
+
+- **part8_7h40m.gcode**: Eighth part, estimated time 7 hours 40 minutes. Includes:
+    - Body Middle Bottom x 1
+    - Body Middle Top x 1
+
+- **part9_1h44m.gcode**: Ninth part, estimated time 1 hour 44 minutes. Includes:
+    - Battery Pack Lid x 1
+    - Bulb x 1
+    - Flash Light Module x 1
+    - Flash Reflector Interface x 1
+    - Left Eye x 1
+    - Right Eye x 1
+    - Speaker Interface x 1
+    - Speaker Stand x 1
+
+    
