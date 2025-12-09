@@ -28,7 +28,7 @@ To make printing easier, you can find below a list of the gcode files provided i
     - Head Yaw to Roll x 1
     - Head Roll Mount x 2
 
-- **part5_6h47m.gcode**: Fifth part, estimated time 6 hours 47 minutes. Includes:
+- **part5_10h48m.gcode**: Fifth part, estimated time 10 hours 48 minutes. Includes:
     - Head x 1
 
 - **part6_4h33m.gcode**: Sixth part, estimated time 4 hours 33 minutes. Includes:
