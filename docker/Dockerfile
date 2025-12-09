@@ -46,3 +46,9 @@ WORKDIR /
 RUN git clone https://github.com/apirrone/Open_Duck_Mini_Runtime
 WORKDIR /Open_Duck_Mini_Runtime
 RUN pip install -e .
+
+###### Install Python Dependencies
+RUN pip install \
+    mujoco \
+    pygame \
+    placo
