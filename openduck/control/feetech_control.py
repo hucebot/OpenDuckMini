@@ -110,6 +110,7 @@ class FeetechControl:
         self.kps = list(np.ones(len(joints)) * 15)
         self.kds = list(np.ones(len(joints)) * 0)
         self.low_torque_kps = list(np.ones(len(joints)) * 3)
+        self.high_torque_kps = list(np.ones(len(joints)) * 33) #For small jumps
 
     def set_kp(self, joint_name, kp):
         self.driver.set_kps(
@@ -130,18 +131,41 @@ class FeetechControl:
             [position]
         )
     
-    def turn_on(self):
+    def turn_on(self, high_torque=False):
+        for id_, motor in enumerate(joints):
+            if high_torque:
+                self.driver.set_kps(
+                    [joints[motor]],
+                    [self.high_torque_kps[id_]]
+                )
+            else:
+                self.driver.set_kps(
+                    [joints[motor]],
+                    [self.low_torque_kps[id_]]
+                )
+
+        print('Turning ON - Low kps set')
+        time.sleep(0.2)
+
+    def change_to_high_torque(self):
+        for id_, motor in enumerate(joints):
+            self.driver.set_kps(
+                [joints[motor]],
+                [self.high_torque_kps[id_]]
+            )
+        print('High kps set')
+        time.sleep(0.2)
+
+    def change_to_low_torque(self):
         for id_, motor in enumerate(joints):
             self.driver.set_kps(
                 [joints[motor]],
                 [self.low_torque_kps[id_]]
             )
-
-        print('Turning ON - Low kps set')
-        time.sleep(1)
+        print('Low kps set')
+        time.sleep(0.2)
 
     def set_positions(self, positions):
-        print(positions)
         for motor in joints.keys():
             self.driver.write_goal_position(
                 [joints[motor]],
@@ -173,7 +197,7 @@ class FeetechControl:
 
 def main():
     driver = FeetechControl()
-    driver.turn_on()
+    driver.turn_on(high_torque=False)
     while True:
         driver.set_positions(init_pos)
         time.sleep(2)
